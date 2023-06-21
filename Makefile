@@ -6,14 +6,11 @@ proto: clean format gen lint git
 .PHONY: gen
 gen:
 	@$(GOPATH)/bin/buf generate
-	@for dir in $(CURDIR)/gen/go/common/; do \
-	  cd $${dir} && \
-	  go mod init example.com/m/common && go mod tidy; \
-	done
-	@for dir in $(CURDIR)/gen/go/prod_service/; do \
-	  cd $${dir} && \
-	  go mod init example.com/m/prod_service && go mod tidy; \
-	done
+		@for dir in $(CURDIR)/gen/go/*/; do \
+		  cd $$dir && \
+		  folder_name=$$(basename $$dir) && \
+		  go mod init $$folder_name && go mod tidy; \
+		done
 
 .PHONY: lint
 lint:

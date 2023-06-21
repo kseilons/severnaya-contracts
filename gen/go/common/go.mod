@@ -1,4 +1,4 @@
-module example.com/m/common
+module common
 
 go 1.20
 

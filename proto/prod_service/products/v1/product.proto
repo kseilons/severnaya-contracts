@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package prod_service.products.v1;
 
-option go_package = "gen/go/prod/product/v1";
+option go_package = "gen/go/prod/product/v1;pb_product";
 
 message Product {
   string identity           = 1;
