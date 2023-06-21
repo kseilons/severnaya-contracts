@@ -26,31 +26,31 @@ export interface AllProductsRequest {
      */
     pagination?: Pagination;
     /**
-     * @generated from protobuf field: common.filter.v1.StringFieldFilter Batch = 2 [json_name = "Batch"];
+     * @generated from protobuf field: common.filter.v1.StringFieldFilter batch = 2;
      */
     batch?: StringFieldFilter;
     /**
-     * @generated from protobuf field: common.filter.v1.StringFieldFilter PalletNumber = 3 [json_name = "PalletNumber"];
+     * @generated from protobuf field: common.filter.v1.StringFieldFilter pallet_number = 3;
      */
     palletNumber?: StringFieldFilter;
     /**
-     * @generated from protobuf field: common.filter.v1.StringFieldFilter DeviceName = 4 [json_name = "DeviceName"];
+     * @generated from protobuf field: common.filter.v1.StringFieldFilter device_name = 4;
      */
     deviceName?: StringFieldFilter;
     /**
-     * @generated from protobuf field: common.filter.v1.IntFieldFilter DeviceNumber = 5 [json_name = "DeviceNumber"];
+     * @generated from protobuf field: common.filter.v1.IntFieldFilter device_number = 5;
      */
     deviceNumber?: IntFieldFilter;
     /**
-     * @generated from protobuf field: common.filter.v1.IntFieldFilter Time = 6 [json_name = "Time"];
+     * @generated from protobuf field: common.filter.v1.IntFieldFilter time = 6;
      */
     time?: IntFieldFilter;
     /**
-     * @generated from protobuf field: common.filter.v1.IntFieldFilter ArticleNumber = 7 [json_name = "ArticleNumber"];
+     * @generated from protobuf field: common.filter.v1.IntFieldFilter article_number = 7;
      */
     articleNumber?: IntFieldFilter;
     /**
-     * @generated from protobuf field: common.filter.v1.IntFieldFilter ArticleName = 8 [json_name = "ArticleName"];
+     * @generated from protobuf field: common.filter.v1.IntFieldFilter article_name = 8;
      */
     articleName?: IntFieldFilter;
     /**
@@ -92,13 +92,13 @@ class AllProductsRequest$Type extends MessageType<AllProductsRequest> {
     constructor() {
         super("prod_service.products.v1.AllProductsRequest", [
             { no: 1, name: "pagination", kind: "message", T: () => Pagination },
-            { no: 2, name: "Batch", kind: "message", jsonName: "Batch", T: () => StringFieldFilter },
-            { no: 3, name: "PalletNumber", kind: "message", jsonName: "PalletNumber", T: () => StringFieldFilter },
-            { no: 4, name: "DeviceName", kind: "message", jsonName: "DeviceName", T: () => StringFieldFilter },
-            { no: 5, name: "DeviceNumber", kind: "message", jsonName: "DeviceNumber", T: () => IntFieldFilter },
-            { no: 6, name: "Time", kind: "message", jsonName: "Time", T: () => IntFieldFilter },
-            { no: 7, name: "ArticleNumber", kind: "message", jsonName: "ArticleNumber", T: () => IntFieldFilter },
-            { no: 8, name: "ArticleName", kind: "message", jsonName: "ArticleName", T: () => IntFieldFilter },
+            { no: 2, name: "batch", kind: "message", T: () => StringFieldFilter },
+            { no: 3, name: "pallet_number", kind: "message", T: () => StringFieldFilter },
+            { no: 4, name: "device_name", kind: "message", T: () => StringFieldFilter },
+            { no: 5, name: "device_number", kind: "message", T: () => IntFieldFilter },
+            { no: 6, name: "time", kind: "message", T: () => IntFieldFilter },
+            { no: 7, name: "article_number", kind: "message", T: () => IntFieldFilter },
+            { no: 8, name: "article_name", kind: "message", T: () => IntFieldFilter },
             { no: 9, name: "sort", kind: "message", T: () => Sort }
         ]);
     }
@@ -117,25 +117,25 @@ class AllProductsRequest$Type extends MessageType<AllProductsRequest> {
                 case /* common.filter.v1.Pagination pagination */ 1:
                     message.pagination = Pagination.internalBinaryRead(reader, reader.uint32(), options, message.pagination);
                     break;
-                case /* common.filter.v1.StringFieldFilter Batch = 2 [json_name = "Batch"];*/ 2:
+                case /* common.filter.v1.StringFieldFilter batch */ 2:
                     message.batch = StringFieldFilter.internalBinaryRead(reader, reader.uint32(), options, message.batch);
                     break;
-                case /* common.filter.v1.StringFieldFilter PalletNumber = 3 [json_name = "PalletNumber"];*/ 3:
+                case /* common.filter.v1.StringFieldFilter pallet_number */ 3:
                     message.palletNumber = StringFieldFilter.internalBinaryRead(reader, reader.uint32(), options, message.palletNumber);
                     break;
-                case /* common.filter.v1.StringFieldFilter DeviceName = 4 [json_name = "DeviceName"];*/ 4:
+                case /* common.filter.v1.StringFieldFilter device_name */ 4:
                     message.deviceName = StringFieldFilter.internalBinaryRead(reader, reader.uint32(), options, message.deviceName);
                     break;
-                case /* common.filter.v1.IntFieldFilter DeviceNumber = 5 [json_name = "DeviceNumber"];*/ 5:
+                case /* common.filter.v1.IntFieldFilter device_number */ 5:
                     message.deviceNumber = IntFieldFilter.internalBinaryRead(reader, reader.uint32(), options, message.deviceNumber);
                     break;
-                case /* common.filter.v1.IntFieldFilter Time = 6 [json_name = "Time"];*/ 6:
+                case /* common.filter.v1.IntFieldFilter time */ 6:
                     message.time = IntFieldFilter.internalBinaryRead(reader, reader.uint32(), options, message.time);
                     break;
-                case /* common.filter.v1.IntFieldFilter ArticleNumber = 7 [json_name = "ArticleNumber"];*/ 7:
+                case /* common.filter.v1.IntFieldFilter article_number */ 7:
                     message.articleNumber = IntFieldFilter.internalBinaryRead(reader, reader.uint32(), options, message.articleNumber);
                     break;
-                case /* common.filter.v1.IntFieldFilter ArticleName = 8 [json_name = "ArticleName"];*/ 8:
+                case /* common.filter.v1.IntFieldFilter article_name */ 8:
                     message.articleName = IntFieldFilter.internalBinaryRead(reader, reader.uint32(), options, message.articleName);
                     break;
                 case /* common.filter.v1.Sort sort */ 9:
@@ -156,25 +156,25 @@ class AllProductsRequest$Type extends MessageType<AllProductsRequest> {
         /* common.filter.v1.Pagination pagination = 1; */
         if (message.pagination)
             Pagination.internalBinaryWrite(message.pagination, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
-        /* common.filter.v1.StringFieldFilter Batch = 2 [json_name = "Batch"]; */
+        /* common.filter.v1.StringFieldFilter batch = 2; */
         if (message.batch)
             StringFieldFilter.internalBinaryWrite(message.batch, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
-        /* common.filter.v1.StringFieldFilter PalletNumber = 3 [json_name = "PalletNumber"]; */
+        /* common.filter.v1.StringFieldFilter pallet_number = 3; */
         if (message.palletNumber)
             StringFieldFilter.internalBinaryWrite(message.palletNumber, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
-        /* common.filter.v1.StringFieldFilter DeviceName = 4 [json_name = "DeviceName"]; */
+        /* common.filter.v1.StringFieldFilter device_name = 4; */
         if (message.deviceName)
             StringFieldFilter.internalBinaryWrite(message.deviceName, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
-        /* common.filter.v1.IntFieldFilter DeviceNumber = 5 [json_name = "DeviceNumber"]; */
+        /* common.filter.v1.IntFieldFilter device_number = 5; */
         if (message.deviceNumber)
             IntFieldFilter.internalBinaryWrite(message.deviceNumber, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
-        /* common.filter.v1.IntFieldFilter Time = 6 [json_name = "Time"]; */
+        /* common.filter.v1.IntFieldFilter time = 6; */
         if (message.time)
             IntFieldFilter.internalBinaryWrite(message.time, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
-        /* common.filter.v1.IntFieldFilter ArticleNumber = 7 [json_name = "ArticleNumber"]; */
+        /* common.filter.v1.IntFieldFilter article_number = 7; */
         if (message.articleNumber)
             IntFieldFilter.internalBinaryWrite(message.articleNumber, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
-        /* common.filter.v1.IntFieldFilter ArticleName = 8 [json_name = "ArticleName"]; */
+        /* common.filter.v1.IntFieldFilter article_name = 8; */
         if (message.articleName)
             IntFieldFilter.internalBinaryWrite(message.articleName, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
         /* common.filter.v1.Sort sort = 9; */

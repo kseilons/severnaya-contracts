@@ -1,7 +1,7 @@
 BUF_VERSION=1.6.0
 
 .PHONY: proto
-proto: clean format gen lint
+proto: clean format gen lint git
 
 .PHONY: gen
 gen:
@@ -27,3 +27,14 @@ format:
 .PHONY: clean
 clean:
 	@rm -rf ./gen || true
+
+.PHONY: git
+git: git_commit git_push
+
+.PHONY: git_commit
+git_commit:
+	@git commit -am "Update proto files"  || true
+
+.PHONY: git_push
+git_push:
+	@git push  || true

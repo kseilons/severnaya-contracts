@@ -64,7 +64,7 @@ export interface Product {
      */
     articleName: string;
     /**
-     * @generated from protobuf field: int64 amountUnits_product = 13;
+     * @generated from protobuf field: int64 amount_units_product = 13;
      */
     amountUnitsProduct: string;
 }
@@ -84,7 +84,7 @@ class Product$Type extends MessageType<Product> {
             { no: 10, name: "time", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 11, name: "article_number", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 12, name: "article_name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 13, name: "amountUnits_product", kind: "scalar", T: 3 /*ScalarType.INT64*/ }
+            { no: 13, name: "amount_units_product", kind: "scalar", T: 3 /*ScalarType.INT64*/ }
         ]);
     }
     create(value?: PartialMessage<Product>): Product {
@@ -135,7 +135,7 @@ class Product$Type extends MessageType<Product> {
                 case /* string article_name */ 12:
                     message.articleName = reader.string();
                     break;
-                case /* int64 amountUnits_product */ 13:
+                case /* int64 amount_units_product */ 13:
                     message.amountUnitsProduct = reader.int64().toString();
                     break;
                 default:
@@ -186,7 +186,7 @@ class Product$Type extends MessageType<Product> {
         /* string article_name = 12; */
         if (message.articleName !== "")
             writer.tag(12, WireType.LengthDelimited).string(message.articleName);
-        /* int64 amountUnits_product = 13; */
+        /* int64 amount_units_product = 13; */
         if (message.amountUnitsProduct !== "0")
             writer.tag(13, WireType.Varint).int64(message.amountUnitsProduct);
         let u = options.writeUnknownFields;

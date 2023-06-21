@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package prod_service.products.v1;
 
-option go_package = "github.com/kseilons/severnaya-contracts/gen/go/prod/products/v1;bc_products";
+option go_package = "gen/go/prod/product/v1";
 
 message Product {
   string identity           = 1;
@@ -17,5 +17,5 @@ message Product {
   string time               = 10;
   string article_number      = 11;
   string article_name        = 12;
-  int64  amountUnits_product = 13;
+  int64  amount_units_product = 13;
 }

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package prod_service.products.v1;
 
-option go_package = "github.com/kseilons/severnaya-contracts/gen/go/prod/products/v1;bc_products";
+option go_package = "gen/go/prod/product/v1";
 
 import "common/filter/v1/filter.proto";
 import "common/filter/v1/sort.proto";
@@ -16,13 +16,13 @@ service ProductService {
 
 message AllProductsRequest {
   common.filter.v1.Pagination pagination = 1;
-  common.filter.v1.StringFieldFilter Batch = 2;
-  common.filter.v1.StringFieldFilter PalletNumber = 3;
-  common.filter.v1.StringFieldFilter DeviceName = 4;
-  common.filter.v1.IntFieldFilter DeviceNumber = 5;
-  common.filter.v1.IntFieldFilter Time = 6;
-  common.filter.v1.IntFieldFilter ArticleNumber = 7;
-  common.filter.v1.IntFieldFilter ArticleName = 8;
+  common.filter.v1.StringFieldFilter batch = 2;
+  common.filter.v1.StringFieldFilter pallet_number = 3;
+  common.filter.v1.StringFieldFilter device_name = 4;
+  common.filter.v1.IntFieldFilter device_number = 5;
+  common.filter.v1.IntFieldFilter time = 6;
+  common.filter.v1.IntFieldFilter article_number = 7;
+  common.filter.v1.IntFieldFilter article_name = 8;
   common.filter.v1.Sort sort = 9;
 }
 
