@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package prod_service.products.v1;
+
+option go_package = "github.com/kseilons/severnaya-contracts/gen/go/prod/products/v1;bc_products";
+
+message Product {
+  string identity           = 1;
+  string printed_weight      = 2;
+  string gross_weight        = 3;
+  string batch              = 4;
+  string box_number          = 5;
+  string pallet_number       = 6;
+  string container_weight    = 7;
+  string device_name         = 8;
+  string device_number       = 9;
+  string time               = 10;
+  string article_number      = 11;
+  string article_name        = 12;
+  int64  amountUnits_product = 13;
+}

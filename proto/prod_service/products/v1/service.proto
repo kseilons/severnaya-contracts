@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package prod_service.products.v1;
+
+option go_package = "github.com/kseilons/severnaya-contracts/gen/go/prod/products/v1;bc_products";
+
+import "common/filter/v1/filter.proto";
+import "common/filter/v1/sort.proto";
+import "prod_service/products/v1/product.proto";
+
+service ProductService {
+  rpc AllProducts(AllProductsRequest) returns (AllProductsResponse) {}
+  rpc ProductByID(ProductByIDRequest) returns (ProductByIDResponse) {}
+}
+
+
+message AllProductsRequest {
+  common.filter.v1.Pagination pagination = 1;
+  common.filter.v1.StringFieldFilter Batch = 2;
+  common.filter.v1.StringFieldFilter PalletNumber = 3;
+  common.filter.v1.StringFieldFilter DeviceName = 4;
+  common.filter.v1.IntFieldFilter DeviceNumber = 5;
+  common.filter.v1.IntFieldFilter Time = 6;
+  common.filter.v1.IntFieldFilter ArticleNumber = 7;
+  common.filter.v1.IntFieldFilter ArticleName = 8;
+  common.filter.v1.Sort sort = 9;
+}
+
+message AllProductsResponse {
+  repeated Product products = 1;
+}
+
+message ProductByIDRequest {
+  // ID
+  string id = 1;
+}
+
+message ProductByIDResponse {
+  Product product = 1;
+}
+
