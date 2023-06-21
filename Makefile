@@ -9,7 +9,7 @@ gen:
 		@for dir in $(CURDIR)/gen/go/*/; do \
 		  cd $$dir && \
 		  folder_name=$$(basename $$dir) && \
-		  go mod init $$folder_name && go mod tidy; \
+		  go mod init github.com/kseilons/severnaya-contracts/gen/go/$$folder_name && go mod tidy; \
 		done
 
 .PHONY: lint

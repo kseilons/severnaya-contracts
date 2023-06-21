@@ -1,4 +1,4 @@
-module prod_service
+module github.com/kseilons/severnaya-contracts/gen/go/prod_service
 
 go 1.20
 
