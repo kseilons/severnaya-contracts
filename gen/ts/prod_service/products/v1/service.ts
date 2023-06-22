@@ -72,11 +72,13 @@ export interface AllProductsResponse {
  */
 export interface ProductByIDRequest {
     /**
-     * ID
-     *
      * @generated from protobuf field: string id = 1;
      */
     id: string;
+    /**
+     * @generated from protobuf field: string device_number = 2;
+     */
+    deviceNumber: string;
 }
 /**
  * @generated from protobuf message prod_service.products.v1.ProductByIDResponse
@@ -241,11 +243,12 @@ export const AllProductsResponse = new AllProductsResponse$Type();
 class ProductByIDRequest$Type extends MessageType<ProductByIDRequest> {
     constructor() {
         super("prod_service.products.v1.ProductByIDRequest", [
-            { no: 1, name: "id", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 1, name: "id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "device_number", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<ProductByIDRequest>): ProductByIDRequest {
-        const message = { id: "" };
+        const message = { id: "", deviceNumber: "" };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<ProductByIDRequest>(this, message, value);
@@ -258,6 +261,9 @@ class ProductByIDRequest$Type extends MessageType<ProductByIDRequest> {
             switch (fieldNo) {
                 case /* string id */ 1:
                     message.id = reader.string();
+                    break;
+                case /* string device_number */ 2:
+                    message.deviceNumber = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -274,6 +280,9 @@ class ProductByIDRequest$Type extends MessageType<ProductByIDRequest> {
         /* string id = 1; */
         if (message.id !== "")
             writer.tag(1, WireType.LengthDelimited).string(message.id);
+        /* string device_number = 2; */
+        if (message.deviceNumber !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.deviceNumber);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

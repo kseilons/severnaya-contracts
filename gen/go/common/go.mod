@@ -1,4 +1,4 @@
-module github.com/kseilons/severnaya-contracts/gen/go/common
+module common
 
 go 1.20
 

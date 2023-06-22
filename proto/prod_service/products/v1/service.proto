@@ -31,8 +31,8 @@ message AllProductsResponse {
 }
 
 message ProductByIDRequest {
-  // ID
   string id = 1;
+  string device_number = 2;
 }
 
 message ProductByIDResponse {
