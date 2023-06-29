@@ -6,7 +6,8 @@ proto: clean format gen lint git
 .PHONY: gen
 gen:
 	@$(GOPATH)/bin/buf generate
-	protoc --proto_path=proto/ --js_out=import_style=commonjs,binary:gen/ --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:gen/ proto/prod_service/products/v1/*.proto proto/common/filter/v1/*.proto
+	mkdir -p gen/js
+	protoc --proto_path=proto/ --js_out=import_style=commonjs,binary:gen/js --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:gen/js proto/prod_service/products/v1/*.proto proto/common/filter/v1/*.proto
 
 #	@for dir in $(CURDIR)/gen/go/*/; do \
 #	  cd $$dir && \
