@@ -6,11 +6,13 @@ proto: clean format gen lint git
 .PHONY: gen
 gen:
 	@$(GOPATH)/bin/buf generate
-		@for dir in $(CURDIR)/gen/go/*/; do \
-		  cd $$dir && \
-		  folder_name=$$(basename $$dir) && \
-		  go mod init $$folder_name && go mod tidy; \
-		done
+	protoc --proto_path=proto/ --js_out=import_style=commonjs,binary:gen/ --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:gen/ proto/prod_service/products/v1/*.proto proto/common/filter/v1/*.proto
+
+#	@for dir in $(CURDIR)/gen/go/*/; do \
+#	  cd $$dir && \
+#	  folder_name=$$(basename $$dir) && \
+#	  go mod init $$folder_name && go mod tidy; \
+#	done
 
 .PHONY: lint
 lint:
